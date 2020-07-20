@@ -35,11 +35,11 @@ def play
     answer = gets.chomp()
     if answer.to_i == prompt.answer
       puts "\n#{@player1.name}: You got it!"
-      puts "#{@player1.name}: #{@player1.lives}/3 vs Player 2: #{@player2.lives}/3"
+      puts "#{@player1.name}: #{@player1.lives}/3 vs #{@player2.name}: #{@player2.lives}/3"
     else
       @player1.lives -= 1
       puts "\n#{@player1.name}: Seriously? No!"
-      puts "#{@player1.name}: #{@player1.lives}/3 vs Player 2: #{@player2.lives}/3"
+      puts "#{@player1.name}: #{@player1.lives}/3 vs #{@player2.name} 2: #{@player2.lives}/3"
     end
     play()
   elsif (@player2.turn and @player1.check_lives and @player2.check_lives) || (@player2.turn and @player2.lives == 1 and !@player1.check_lives)
@@ -51,12 +51,12 @@ def play
     print "> "
     answer = gets.chomp()
     if answer.to_i == prompt.answer
-      puts "\n{@player2.name}: You got it!"
-      puts "#{@player2.name}: #{@player1.lives}/3 vs Player 2: #{@player2.lives}/3"
+      puts "\n#{@player2.name}: You got it!"
+      puts "#{@player1.name}: #{@player1.lives}/3 vs #{@player2.name} : #{@player2.lives}/3"
     else
       @player2.lives -= 1
       puts "\n#{@player2.name}: Seriously? No!"
-      puts "#{@player2.name}: #{@player1.lives}/3 vs Player 2: #{@player2.lives}/3"
+      puts "#{@player1.name}: #{@player1.lives}/3 vs #{@player2.name}: #{@player2.lives}/3"
     end
     play()
   else
